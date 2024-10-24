@@ -1,0 +1,94 @@
+/* Estilos Globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Color de fondo claro */
+    color: #333; /* Texto oscuro */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Encabezados */
+h1, h2 {
+    color: #4CAF50; /* Verde para encabezados */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de la lista */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    text-align: center; /* Centra el texto de la lista */
+}
+
+/* Estilo de los elementos de la lista */
+li {
+    margin: 10px 0; /* Espacio entre elementos */
+}
+
+/* Enlaces */
+a {
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    background-color: #4CAF50; /* Verde */
+    color: white; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+}
+
+a:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Eleva ligeramente el botón al pasar el mouse */
+}
+
+/* Estilos para formularios */
+form {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+form div {
+    margin-bottom: 15px; /* Espacio entre campos */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    font-weight: bold; /* Texto en negrita */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #4CAF50; /* Cambio de color del borde al enfocar */
+    outline: none; /* Sin borde azul por defecto */
+}
+
+/* Botón de envío */
+button {
+    background-color: #4CAF50; /* Verde */
+    color: white; /* Texto blanco */
+    padding: 10px 15px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el mouse */
+}

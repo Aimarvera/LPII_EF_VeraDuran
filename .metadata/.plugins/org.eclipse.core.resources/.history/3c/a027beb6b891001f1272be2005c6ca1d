@@ -1,0 +1,36 @@
+package com.cibertec.controller;
+
+import com.cibertec.entity.Paciente;
+import com.cibertec.service.PacienteService; // Asegúrate de importar la interfaz
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@@Controller
+@RequestMapping("/pacientes")
+public class PacienteController {
+
+    @GetMapping("/registrar")
+    public String mostrarFormularioRegistro(Model model) {
+        model.addAttribute("paciente", new Paciente());
+        return "registrarPaciente";
+    }
+
+    @GetMapping("/listar")
+    public String listarPacientes(Model model) {
+        model.addAttribute("pacientes", pacienteService.listarPacientes());
+        return "listarPacientes";
+    }
+
+    @GetMapping("/historial/{id}")
+    public String verHistorial(@PathVariable("id") Long id, Model model) {
+        Paciente paciente = pacienteService.obtenerPacientePorId(id);
+        model.addAttribute("paciente", paciente);
+        return "historialMedico";
+    }
+}
+
+

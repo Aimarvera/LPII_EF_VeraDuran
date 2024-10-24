@@ -1,0 +1,22 @@
+package com.cibertec.service;
+
+import com.cibertec.entity.HistorialMedico;
+import com.cibertec.entity.Paciente;
+import com.cibertec.repository.HistorialMedicoRepository;
+import com.cibertec.repository.PacienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+package com.cibertec.service;
+
+import com.cibertec.entity.Paciente;
+
+import java.util.List;
+
+public interface PacienteService {
+    Paciente registrarPaciente(Paciente paciente);
+    List<Paciente> listarPacientes();
+    Paciente obtenerPacientePorId(Long id); // Este método debe estar en la interfaz
+}

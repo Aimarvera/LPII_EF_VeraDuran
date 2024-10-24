@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba CSS</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Cambia a la ruta estática -->
+</head>
+<body>
+    <h1>Prueba de CSS</h1>
+    <p>Si este texto es azul, el CSS está funcionando.</p>
+</body>
+</html>

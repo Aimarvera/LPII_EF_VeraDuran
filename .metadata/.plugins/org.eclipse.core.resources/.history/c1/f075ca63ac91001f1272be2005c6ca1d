@@ -1,0 +1,116 @@
+/* styles.css */
+
+/* Reset básico para eliminar márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo del cuerpo */
+body {
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente */
+    background-color: #f4f4f4; /* Color de fondo suave */
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Espaciado de líneas */
+}
+
+/* Encabezado principal */
+h1, h2, h3 {
+    color: #2c3e50; /* Color azul oscuro */
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    color: #3498db; /* Color azul para enlaces */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Estilos para listas */
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0; /* Espaciado entre elementos de la lista */
+}
+
+/* Botones */
+.button {
+    display: inline-block;
+    background-color: #3498db; /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.button:hover {
+    background-color: #2980b9; /* Color más oscuro al pasar el mouse */
+}
+
+/* Formularios */
+form {
+    background: #fff; /* Fondo blanco para formularios */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado entre campos */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #3498db; /* Borde azul al enfocar */
+    outline: none; /* Sin borde de enfoque */
+}
+
+/* Estilo para tablas */
+table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+table th,
+table td {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde gris claro */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+table th {
+    background-color: #3498db; /* Color de fondo para encabezados */
+    color: white; /* Color de texto blanco */
+}
+
+/* Estilo para mensajes de error */
+.error {
+    color: red; /* Color rojo para mensajes de error */
+}

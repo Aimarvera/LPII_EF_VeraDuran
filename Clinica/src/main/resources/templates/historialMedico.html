@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Médico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center; /* Centrar el título */
+            margin-bottom: 30px; /* Espaciado debajo del título */
+        }
+
+        div {
+            margin-bottom: 15px; /* Espaciado entre los divs */
+        }
+
+        label {
+            font-weight: bold; /* Negrita para las etiquetas */
+        }
+
+        a {
+            color: #007bff; /* Color del enlace */
+            text-decoration: none; /* Sin subrayado */
+            font-weight: bold; /* Negrita para el texto del enlace */
+            display: inline-block; /* Para aplicar márgenes y alineación */
+            margin-top: 20px; /* Espacio superior del enlace */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subrayar al pasar el mouse */
+        }
+
+        .center {
+            text-align: center; /* Centrar el texto */
+            margin-top: 20px; /* Espacio arriba del enlace */
+        }
+    </style>
+</head>
+<body>
+    <h1>Historial Médico del Paciente</h1>
+
+    <div>
+        <label>Nombre: </label> <span th:text="${paciente.nombre}"></span>
+    </div>
+    <div>
+        <label>Dirección: </label> <span th:text="${paciente.direccion}"></span>
+    </div>
+    <div>
+        <label>Teléfono: </label> <span th:text="${paciente.telefono}"></span>
+    </div>
+    <div>
+        <label>Email: </label> <span th:text="${paciente.email}"></span>
+    </div>
+    <div>
+        <label>Historial Odontológico: </label> <span th:text="${paciente.historialOdontologico}"></span>
+    </div>
+    <div>
+        <label>Alergias: </label> <span th:text="${paciente.alergias}"></span>
+    </div>
+    <div>
+        <label>Tratamientos Previos: </label> <span th:text="${paciente.tratamientosPrevios}"></span>
+    </div>
+
+    <div class="center">
+        <a th:href="@{/}">Volver a la página principal</a>
+    </div>
+</body>
+</html>

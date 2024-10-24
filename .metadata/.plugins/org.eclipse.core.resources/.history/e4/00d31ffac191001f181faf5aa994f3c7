@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <link rel="stylesheet" type="text/css" href="/css/RegistrarPacientes.css"> <!-- Vincula el CSS -->
+</head>
+<body>
+    <h1>Registrar Paciente</h1>
+    
+    <form th:action="@{/pacientes/registrar}" th:object="${paciente}" method="post">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required/>
+        </div>
+        <div>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" th:field="*{direccion}" required/>
+        </div>
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" th:field="*{telefono}" required/>
+        </div>
+        <div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" th:field="*{email}" required/>
+        </div>
+        <div>
+            <label for="historialOdontologico">Historial Odontológico:</label>
+            <textarea id="historialOdontologico" th:field="*{historialOdontologico}" required></textarea>
+        </div>
+        <div>
+            <label for="alergias">Alergias:</label>
+            <input type="text" id="alergias" th:field="*{alergias}" />
+        </div>
+        <div>
+            <label for="tratamientosPrevios">Tratamientos Previos:</label>
+            <textarea id="tratamientosPrevios" th:field="*{tratamientosPrevios}"></textarea>
+        </div>
+        
+        <div>
+            <button type="submit">Registrar</button>
+        </div>
+    </form>
+    
+    <a th:href="@{/}">Volver a la página principal</a>
+</body>
+</html>
+

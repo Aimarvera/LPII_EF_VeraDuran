@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Médico</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h1>Historial Médico</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Diagnóstico</th>
+                <th>Tratamiento</th>
+                <th>Médico</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${historial}">
+                <td th:text="${item.fecha}"></td>
+                <td th:text="${item.diagnostico}"></td>
+                <td th:text="${item.tratamiento}"></td>
+                <td th:text="${item.medico}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/pacientes/listar">Regresar a Listar Pacientes</a>
+</body>
+</html>

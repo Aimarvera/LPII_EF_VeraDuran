@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Principal - Sistema de Gestión Clínica Odontológica</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Gestión Clínica Odontológica</h1>
+    <h2>¿Qué te gustaría hacer?</h2>
+
+    <ul>
+        <!-- Redirige al formulario de registrar paciente -->
+        <li><a th:href="@{/pacientes/registrar}">Registrar Paciente</a></li>
+
+        <!-- Redirige a la lista de pacientes -->
+        <li><a th:href="@{/pacientes/listar}">Listar Pacientes</a></li>
+
+        <!-- Ejemplo para ver el historial médico de un paciente con ID 1 -->
+        <li><a th:href="@{/pacientes/Historial}">Ver Historial Médico (Paciente ID 1)</a></li>
+    </ul>
+</body>
+</html>

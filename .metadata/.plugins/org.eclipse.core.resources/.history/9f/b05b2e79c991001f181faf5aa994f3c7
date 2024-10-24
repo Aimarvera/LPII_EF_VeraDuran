@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Pacientes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+
+</head>
+<body>
+    <h1>Lista de Pacientes</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Historial Odontológico</th>
+                <th>Alergias</th>
+                <th>Tratamientos Previos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="paciente : ${pacientes}">
+                <td th:text="${paciente.id}">1</td>
+                <td th:text="${paciente.nombre}">John Doe</td>
+                <td th:text="${paciente.direccion}">123 Calle Falsa</td>
+                <td th:text="${paciente.telefono}">987654321</td>
+                <td th:text="${paciente.email}">john.doe@email.com</td>
+                <td th:text="${paciente.historialOdontologico}">Sin problemas</td>
+                <td th:text="${paciente.alergias}">Ninguna</td>
+                <td th:text="${paciente.tratamientosPrevios}">Limpieza dental</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a th:href="@{/}">Volver a la página principal</a>
+</body>
+</html>

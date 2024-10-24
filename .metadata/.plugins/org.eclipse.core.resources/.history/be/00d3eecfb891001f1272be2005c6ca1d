@@ -1,0 +1,34 @@
+package com.cibertec.service;
+
+import com.cibertec.entity.Paciente;
+import com.cibertec.repository.PacienteRepository;
+import com.cibertec.service.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class PacienteServiceImpl implements PacienteService {
+
+    @Autowired
+    private PacienteRepository pacienteRepository;
+
+    @Override
+    public Paciente registrarPaciente(Paciente paciente) {
+        return pacienteRepository.save(paciente);
+    }
+
+    @Override
+    public List<Paciente> listarPacientes() {
+        return pacienteRepository.findAll();
+    }
+
+    // Implementación del método para obtener paciente por ID
+    @Override
+    public Paciente obtenerPacientePorId(Long id) {
+        Optional<Paciente> paciente = pacienteRepository.findById(id);
+        return paciente.orElse(null);  // Retorna null si no se encuentra el paciente
+    }
+}

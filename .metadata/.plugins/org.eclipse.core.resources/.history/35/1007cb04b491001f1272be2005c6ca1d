@@ -1,0 +1,48 @@
+package com.cibertec.controller;
+
+import com.cibertec.entity.Paciente;
+import com.cibertec.service.PacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Controller
+@RequestMapping("/pacientes")
+public class PacienteController {
+    @Autowired
+    private PacienteService pacienteService;
+
+    // Para mostrar la página de registrar paciente
+    @GetMapping("/registrar")
+    public String mostrarFormularioRegistro(Model model) {
+        model.addAttribute("paciente", new Paciente());
+        return "registrarPaciente";
+    }
+
+    // Para procesar el registro de paciente
+    @PostMapping("/registrar")
+    public String registrarPaciente(@ModelAttribute("paciente") Paciente paciente) {
+        pacienteService.registrarPaciente(paciente);
+        return "redirect:/pacientes/listar";
+    }
+
+    // Para mostrar la lista de pacientes
+    @GetMapping("/listar")
+    public String listarPacientes(Model model) {
+        List<Paciente> pacientes = pacienteService.listarPacientes();
+        model.addAttribute("pacientes", pacientes);
+        return "listarPacientes";
+    }
+
+    // Para ver el historial médico de un paciente específico
+    @GetMapping("/historial/{id}")
+    public String verHistorial(@PathVariable("id") Long id, Model model) {
+        Paciente paciente = pacienteService.obtenerPacientePorId(id);
+        model.addAttribute("paciente", paciente);
+        return "historialMedico";
+    }
+}
+

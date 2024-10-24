@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Médico de Paciente</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enlaza tu archivo CSS -->
+</head>
+<body>
+    <h1>Historial Médico de Paciente</h1>
+    <h2 th:text="'Paciente: ' + ${paciente.nombre}"></h2> <!-- Nombre del paciente -->
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Diagnóstico</th>
+                <th>Tratamiento</th>
+                <th>Radiografías</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="historial : ${historialMedico}">
+                <td th:text="${historial.id}"></td>
+                <td th:text="${historial.fecha}"></td>
+                <td th:text="${historial.diagnostico}"></td>
+                <td th:text="${historial.tratamiento}"></td>
+                <td>
+                    <a th:href="@{${historial.radiografiaUrl}}" th:text="'Ver Radiografía'" target="_blank"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a href="/">Volver a la página principal</a>
+</body>
+</html>

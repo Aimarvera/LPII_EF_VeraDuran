@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Paciente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px; /* Espaciado debajo del título principal */
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px; /* Esquinas redondeadas */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para el formulario */
+            max-width: 600px; /* Ancho máximo del formulario */
+            margin: 0 auto; /* Centrar el formulario en la página */
+        }
+
+        div {
+            margin-bottom: 15px; /* Espacio entre los elementos del formulario */
+        }
+
+        label {
+            display: block; /* Hacer que las etiquetas ocupen todo el ancho */
+            margin-bottom: 5px; /* Espaciado debajo de la etiqueta */
+        }
+
+        input, textarea {
+            width: 100%; /* Ancho completo para inputs y textareas */
+            padding: 10px; /* Espaciado interno */
+            border: 1px solid #ccc; /* Borde gris */
+            border-radius: 4px; /* Esquinas redondeadas */
+            box-sizing: border-box; /* Incluir padding en el ancho total */
+        }
+
+        button {
+            background-color: #28a745; /* Color de fondo verde */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Esquinas redondeadas */
+            cursor: pointer; /* Cambia el cursor al pasar el mouse */
+            transition: background-color 0.3s; /* Transición suave */
+            display: block; /* Para que ocupe el ancho completo */
+            margin-top: 20px; /* Espaciado encima del botón */
+        }
+
+        button:hover {
+            background-color: #218838; /* Color al pasar el mouse */
+        }
+
+        a {
+            display: block; /* Hacer que el enlace ocupe toda la línea */
+            text-align: center; /* Centrar el texto del enlace */
+            margin-top: 20px; /* Espaciado encima del enlace */
+            color: #007bff; /* Color del enlace */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subrayar al pasar el mouse */
+        }
+    </style>
+	</head>
+	<body>
+	    <h1>Registrar Paciente</h1>
+		<form action="/pacientes/registrar" method="post">
+	        <div>
+	            <label for="nombre">Nombre:</label>
+	            <input type="text" id="nombre" name="nombre" required>
+	        </div>
+	        <div>
+	            <label for="direccion">Dirección:</label>
+	            <input type="text" id="direccion" name="direccion" required>
+	        </div>
+	        <div>
+	            <label for="telefono">Teléfono:</label>
+	            <input type="text" id="telefono" name="telefono" required>
+	        </div>
+	        <div>
+	            <label for="email">Correo Electrónico:</label>
+	            <input type="email" id="email" name="email" required>
+	        </div>
+	        <div>
+	            <label for="historialOdontologico">Historial Odontológico:</label>
+	            <textarea id="historialOdontologico" name="historialOdontologico" required></textarea>
+	        </div>
+	        <div>
+	            <label for="alergias">Alergias:</label>
+	            <input type="text" id="alergias" name="alergias">
+	        </div>
+	        <div>
+	            <label for="tratamientosPrevios">Tratamientos Previos:</label>
+	            <input type="text" id="tratamientosPrevios" name="tratamientosPrevios">
+	        </div>
+	        <button type="submit">Registrar</button>
+			<button type="submit">Lista De pacientes </button>
+	    </form>
+	</body>
+	</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Médico</title>
+    <link rel="stylesheet" type="text/css" href="/css/historial.css">
+</head>
+<body>
+    <h2>Historial Médico de Paciente</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Diagnóstico</th>
+                <th>Tratamiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="historial : ${historialMedico}">
+                <td th:text="${historial.fecha}"></td>
+                <td th:text="${historial.diagnostico}"></td>
+                <td th:text="${historial.tratamiento}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

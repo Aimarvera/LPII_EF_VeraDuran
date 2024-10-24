@@ -1,0 +1,14 @@
+package com.cibertec.controller;
+
+@Controller
+public class HistorialController {
+    @Autowired
+    private PacienteService pacienteService;
+
+    @GetMapping("/pacientes/historial/{id}")
+    public String verHistorialMedico(@PathVariable Long id, Model model) {
+        List<HistorialMedico> historialesMedicos = pacienteService.obtenerHistorialMedicoPorPacienteId(id);
+        model.addAttribute("historialesMedicos", historialesMedicos);
+        return "historial"; // Nombre de la vista HTML
+    }
+}

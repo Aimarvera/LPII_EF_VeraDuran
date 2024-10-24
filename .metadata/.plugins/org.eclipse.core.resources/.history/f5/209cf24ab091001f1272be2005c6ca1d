@@ -1,0 +1,15 @@
+package com.cibertec.service;
+
+import com.cibertec.entity.HistorialMedico;
+import com.cibertec.entity.Paciente;
+import com.cibertec.repository.HistorialMedicoRepository;
+import com.cibertec.repository.PacienteRepository;
+
+
+
+
+public interface PacienteService {
+    Paciente registrarPaciente(Paciente paciente);
+    List<Paciente> listarPacientes();
+    Paciente obtenerPacientePorId(Long id); // Este método debe estar en la interfaz
+}

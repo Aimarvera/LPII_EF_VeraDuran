@@ -1,0 +1,46 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Subtítulo */
+h2 {
+    color: #555;
+    text-align: center;
+}
+
+/* Lista */
+ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+    max-width: 400px; /* Ancho máximo para la lista */
+    margin: 20px auto; /* Centra la lista en la página */
+}
+
+/* Elementos de la lista */
+li {
+    background-color: #4CAF50; /* Color de fondo de los elementos de la lista */
+    margin: 10px 0; /* Espacio entre los elementos de la lista */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+li a {
+    display: block; /* Hace que el área del enlace ocupe todo el espacio del li */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Quita el subrayado */
+    padding: 15px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+}
+
+li a:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Historial Médico</title>
+	<link rel="stylesheet" type="text/css" href="/css/Registrarpacientes.css">
+</head>
+<body>
+    <h1>Registrar Historial Médico</h1>
+    <form action="#" th:action="@{/historial/registrar}" th:object="${historial}" method="post">
+        <input type="hidden" th:field="*{pacienteId}"/>
+
+        <label for="tratamientosRecibidos">Tratamientos Recibidos:</label>
+        <input type="text" id="tratamientosRecibidos" th:field="*{tratamientosRecibidos}" required/>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" th:field="*{fecha}" required/>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <input type="text" id="diagnostico" th:field="*{diagnostico}" required/>
+
+        <label for="radiografias">Radiografías:</label>
+        <input type="text" id="radiografias" th:field="*{radiografias}" required/>
+
+        <label for="medicoAtendio">Médico que Atendió:</label>
+        <input type="text" id="medicoAtendio" th:field="*{medicoAtendio}" required/>
+
+        <button type="submit">Registrar</button>
+    </form>
+    <a href="/pacientes/listar" th:href="@{/pacientes/listar}">Volver a la Lista de Pacientes</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historial Médico</title>
+
+</head>
+<body>
+    <h1>Historial Médico del Paciente</h1>
+
+    <div>
+        <label>Nombre: </label> <span th:text="${paciente.nombre}"></span>
+    </div>
+    <div>
+        <label>Dirección: </label> <span th:text="${paciente.direccion}"></span>
+    </div>
+    <div>
+        <label>Teléfono: </label> <span th:text="${paciente.telefono}"></span>
+    </div>
+    <div>
+        <label>Email: </label> <span th:text="${paciente.email}"></span>
+    </div>
+    <div>
+        <label>Historial Odontológico: </label> <span th:text="${paciente.historialOdontologico}"></span>
+    </div>
+    <div>
+        <label>Alergias: </label> <span th:text="${paciente.alergias}"></span>
+    </div>
+    <div>
+        <label>Tratamientos Previos: </label> <span th:text="${paciente.tratamientosPrevios}"></span>
+    </div>
+
+    <a th:href="@{/}">Volver a la página principal</a>
+</body>
+</html>

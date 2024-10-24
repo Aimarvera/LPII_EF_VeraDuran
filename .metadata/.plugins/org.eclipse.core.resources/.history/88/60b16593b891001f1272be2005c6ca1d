@@ -1,0 +1,48 @@
+package com.cibertec.controller;
+
+import com.cibertec.entity.Paciente;
+import com.cibertec.service.PacienteService; // Asegúrate de importar la interfaz
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Controller
+@RequestMapping("/pacientes")
+public class PacienteController {
+
+    @Autowired
+    private PacienteService pacienteService; // Esto debe ser la interfaz
+
+    @GetMapping("/registrar")
+    public String mostrarFormularioRegistro(Model model) {
+        model.addAttribute("paciente", new Paciente());
+        return "registrarPaciente";
+    }
+
+    @PostMapping("/registrar")
+    public String registrarPaciente(@ModelAttribute("paciente") Paciente paciente) {
+        pacienteService.registrarPaciente(paciente);
+        return "redirect:/pacientes/listar";
+    }
+
+    @GetMapping("/listar")
+    public String listarPacientes(Model model) {
+        List<Paciente> pacientes = pacienteService.listarPacientes();
+        model.addAttribute("pacientes", pacientes);
+        return "listarPacientes";
+    }
+
+    @GetMapping("/historial/{id}")
+    public String verHistorial(@PathVariable("id") Long id, Model model) {
+        Paciente paciente = pacienteService.obtenerPacientePorId(id);
+        if (paciente == null) {
+            return "errorPacienteNoEncontrado";  // Página de error si no se encuentra
+        }
+        model.addAttribute("paciente", paciente);
+        return "historialMedico";
+    }
+}
+

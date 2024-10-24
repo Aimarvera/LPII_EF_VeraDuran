@@ -1,0 +1,72 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos del formulario */
+form {
+    background-color: #fff; /* Color de fondo del formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra del formulario */
+    padding: 20px; /* Espaciado interno */
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 20px auto; /* Centra el formulario en la página */
+}
+
+/* Estilos para cada elemento del formulario */
+div {
+    margin-bottom: 15px; /* Espacio entre los campos del formulario */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen todo el ancho */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+    color: #555; /* Color del texto de las etiquetas */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Ancho completo para los campos de entrada */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón */
+button {
+    background-color: #4CAF50; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+button:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}
+
+/* Enlace para volver */
+a {
+    display: block; /* Hace que el enlace ocupe todo el ancho */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio arriba del enlace */
+    text-decoration: none; /* Quita el subrayado */
+    color: #4CAF50; /* Color del enlace */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}

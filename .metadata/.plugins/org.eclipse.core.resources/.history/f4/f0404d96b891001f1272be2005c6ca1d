@@ -1,0 +1,24 @@
+@Controller
+@RequestMapping("/pacientes")
+public class PacienteController {
+
+    @GetMapping("/registrar")
+    public String mostrarFormularioRegistro(Model model) {
+        model.addAttribute("paciente", new Paciente());
+        return "registrarPaciente";
+    }
+
+    @GetMapping("/listar")
+    public String listarPacientes(Model model) {
+        model.addAttribute("pacientes", pacienteService.listarPacientes());
+        return "listarPacientes";
+    }
+
+    @GetMapping("/historial/{id}")
+    public String verHistorial(@PathVariable("id") Long id, Model model) {
+        Paciente paciente = pacienteService.obtenerPacientePorId(id);
+        model.addAttribute("paciente", paciente);
+        return "historialMedico";
+    }
+}
+

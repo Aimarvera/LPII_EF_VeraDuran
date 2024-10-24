@@ -1,0 +1,26 @@
+package com.cibertec.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.cibertec.entity.HistorialMedico;
+import com.cibertec.service.PacienteService;
+
+import ch.qos.logback.core.model.Model;
+
+@Controller
+public class HistorialController {
+    @Autowired
+    private PacienteService pacienteService;
+
+    @GetMapping("/pacientes/historial/{id}")
+    public String verHistorialMedico(@PathVariable Long id, Model model) {
+        List<HistorialMedico> historialesMedicos = pacienteService.obtenerHistorialMedicoPorPacienteId(id);
+        model.addAttribute("historialesMedicos", historialesMedicos);
+        return "historial"; // Nombre de la vista HTML
+    }
+}

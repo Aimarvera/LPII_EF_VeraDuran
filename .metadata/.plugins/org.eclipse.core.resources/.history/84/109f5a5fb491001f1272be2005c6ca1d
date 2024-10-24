@@ -1,0 +1,13 @@
+package com.cibertec.service;
+
+import com.cibertec.entity.Paciente;
+
+import java.util.List;
+
+public interface PacienteService {
+    Paciente registrarPaciente(Paciente paciente);  // Ya existente
+    List<Paciente> listarPacientes();               // Ya existente
+    
+    // Añade este método para obtener paciente por ID
+    Paciente obtenerPacientePorId(Long id);
+}
